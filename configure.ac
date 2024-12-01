@@ -63,7 +63,7 @@ AM_CONDITIONAL([WITH_GTEST], [test "$with_proto" = yes])
 AM_COND_IF([WITH_GTEST], [
     gtest_root=$ac_abs_confdir/third_party/googletest
     gtest_check_f=$gtest_root/googletest/src/gtest.cc
-    AC_CHECK_FILE([$gtest_check_f], [],
+    AS_IF([test -f $gtest_check_f], [],
                   [AC_MSG_ERROR([Did you run 'git submodule update --init'?])])
 ])
 
