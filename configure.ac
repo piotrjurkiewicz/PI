@@ -63,7 +63,7 @@ AM_CONDITIONAL([WITH_GTEST], [test "$with_proto" = yes])
 AM_COND_IF([WITH_GTEST], [
     gtest_root=$ac_abs_confdir/third_party/googletest
     gtest_check_f=$gtest_root/googletest/src/gtest.cc
-    AC_CHECK_FILE([$gtest_check_f], [],
+    AS_IF([test -f $gtest_check_f], [],
                   [AC_MSG_ERROR([Did you run 'git submodule update --init'?])])
 ])
 
@@ -183,8 +183,7 @@ AS_IF([test "x$CLANG" = "xyes"],
       [EXTRA_CFLAGS="$EXTRA_CFLAGS -Wno-tautological-constant-out-of-range-compare"])
 AC_SUBST([AM_CFLAGS], ["$PTHREAD_CFLAGS $EXTRA_CFLAGS"])
 
-AC_SUBST([AM_CPPFLAGS], ["-DPI_LOG_ON -isystem$INCLUDE_DIR"])
-AC_SUBST([AM_LDFLAGS], ["-L$LIB_DIR"])
+AC_SUBST([AM_CPPFLAGS], ["-DPI_LOG_ON"])
 
 # Generate makefiles
 AC_CONFIG_FILES([Makefile
