@@ -184,7 +184,7 @@ AS_IF([test "x$CLANG" = "xyes"],
 AC_SUBST([AM_CFLAGS], ["$PTHREAD_CFLAGS $EXTRA_CFLAGS"])
 
 AC_SUBST([AM_CPPFLAGS], ["-DPI_LOG_ON"])
-AC_SUBST([AM_LDFLAGS], ["-L$LIB_DIR"])
+#AC_SUBST([AM_LDFLAGS], ["-L$LIB_DIR"])
 
 # Generate makefiles
 AC_CONFIG_FILES([Makefile
