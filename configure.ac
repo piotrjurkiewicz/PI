@@ -183,7 +183,7 @@ AS_IF([test "x$CLANG" = "xyes"],
       [EXTRA_CFLAGS="$EXTRA_CFLAGS -Wno-tautological-constant-out-of-range-compare"])
 AC_SUBST([AM_CFLAGS], ["$PTHREAD_CFLAGS $EXTRA_CFLAGS"])
 
-AC_SUBST([AM_CPPFLAGS], ["-DPI_LOG_ON -isystem$INCLUDE_DIR"])
+AC_SUBST([AM_CPPFLAGS], ["-DPI_LOG_ON -I$INCLUDE_DIR"])
 AC_SUBST([AM_LDFLAGS], ["-L$LIB_DIR"])
 
 # Generate makefiles
