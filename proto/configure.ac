@@ -91,7 +91,7 @@ AM_COND_IF([WITH_SYSREPO], [
 ])
 
 p4runtime_check_f=$ac_abs_confdir/p4/v1/p4runtime.proto
-AC_CHECK_FILE([$p4runtime_check_f], [],
+AS_IF([test -f $p4runtime_check_f], [],
               [AC_MSG_ERROR([Cannot find p4runtime; did you run 'git submodule update --init'?])])
 
 AC_ARG_ENABLE([Werror],
